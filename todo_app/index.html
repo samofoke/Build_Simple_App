@@ -18,12 +18,28 @@
     <!--This will be our body for the html-->
     <body>
 
+        <!--The align-items-center and flex-column are part of flex box-->
+
         <!--building my todo input field-->
-        <div class="d-flex justify-content-center">
-            <div class="input-group w-50">
-                <input type="text" class="form-control" placeholder="insert text" aria-label="insert text" aria-describedby="button-addon2">
+        <div class="d-flex align-items-center flex-column mt-5">
+            <div class="input-group w-50 mb-4">
+                <textarea
+                    class="form-control"
+                    id="inputText"
+                >
+                </textarea>
+            </div>
+            <button type="button" class="btn btn-primary">Add</button>
+        </div>
+
+        <!--The body of todo items-->
+        <div class="d-flex justify-content-center vw-90 mt-5">
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                <strong>Holy guacamole!</strong> You should check in on some of those fields below.
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
             </div>
         </div>
+
         <script src="./todo.js"></script>
         <!--JavaScript bundle from Bootstp CDN-->
         <script 
