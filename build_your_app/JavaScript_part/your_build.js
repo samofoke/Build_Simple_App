@@ -21,6 +21,12 @@ function animate() {
         more.classList.add('active');
         
     }, 3000);
+
+    links.forEach((link, index) => {
+        setTimeout(() => {
+            link.classList.add('active');
+        }, (index * 200) + 2500);
+    })
 }
 
 animate()
