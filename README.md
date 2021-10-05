@@ -1,2 +1,2 @@
-# todo_app
-going through the basics of web dev using a todo app
+# Sample for building your website
+going through the basics of html, CSS and JavaScript
