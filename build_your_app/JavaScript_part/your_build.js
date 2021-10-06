@@ -2,9 +2,7 @@ let header = document.querySelector('.header');
 let site = document.querySelector('.site');
 let more = document.querySelector('.more');
 
-
-let imageOverlay = document.querySelector('.imageContainer').children[0];//we selecting on the first child element
-let mainImage = document.querySelector('.imageContainer').children[1];
+const text = document.querySelector('.prm');
 
 let links = Array.from(document.querySelectorAll('.link'));
 
@@ -12,8 +10,6 @@ let links = Array.from(document.querySelectorAll('.link'));
 function animate() {
     setTimeout(() => {
         header.classList.add('active');
-        imageOverlay.style.animation = 'slide 1s forwards';
-        mainImage.style.animation = 'slide-perm 1s forwards';
     }, 2000);
 
     setTimeout(() => {
@@ -31,3 +27,28 @@ function animate() {
 
 animate()
 
+
+const strText = text.textContent;
+const splitText = strText.split("");
+text.textContent = "";
+for(let i = 0; i < splitText.length; i++) {
+  text.innerHTML += "<span>" + splitText[i] + "</span>";
+}
+
+let char = 0;
+let timer = setInterval(onTick, 15);
+
+function onTick(){
+  const span = text.querySelectorAll('span')[char];
+  span.classList.add('prm');
+  char++ 
+  if(char === splitText.length){
+    complete();
+    return;
+  }
+}
+
+function complete(){
+  clearInterval(timer);
+  timer = null;
+}
